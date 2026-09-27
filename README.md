@@ -1,60 +1,49 @@
+<p align="center">
+  <img src="docs/readme-banner.png" alt="Wormhole — Expose your localhost to the internet. Instantly. Run wormhole http 3000." width="100%">
+</p>
 
 <p align="center">
-  <pre align="center">
-  █   █ █▀▀█ █▀▀█ █▀▄▀█ █  █ █▀▀█ █   █▀▀
-  █▄█▄█ █  █ █▄▄▀ █ █ █ █▀▀█ █  █ █   █▀▀
-  ▀ ▀ ▀ ▀▀▀▀ ▀ ▀▀ ▀   ▀ ▀  ▀ ▀▀▀▀ ▀▀▀ ▀▀▀
-  </pre>
-  <br>
-  <strong>Expose your localhost to the internet. Instantly.</strong>
-  <br><br>
   <a href="https://github.com/MuhammadHananAsghar/wormhole/releases"><img src="https://img.shields.io/github/v/release/MuhammadHananAsghar/wormhole?style=flat-square" alt="Release"></a>
   <a href="https://github.com/MuhammadHananAsghar/wormhole/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MuhammadHananAsghar/wormhole?style=flat-square" alt="License"></a>
   <a href="https://goreportcard.com/report/github.com/MuhammadHananAsghar/wormhole"><img src="https://goreportcard.com/badge/github.com/MuhammadHananAsghar/wormhole?style=flat-square" alt="Go Report"></a>
 </p>
 
----
+<p align="center">
+  <a href="https://wormhole.bar">Website</a> ·
+  <a href="#installation">Installation</a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#cli-reference">CLI reference</a> ·
+  <a href="https://github.com/MuhammadHananAsghar/wormhole/issues">Report an issue</a>
+</p>
 
-**Wormhole** is an open-source [ngrok](https://ngrok.com) alternative that gives your local server a public HTTPS URL with a single command. No signup required. No config files. Just works.
+## Local development. Public URLs.
+
+**Wormhole** gives your local server a public HTTPS URL with one command. Share a development server, test incoming webhooks, or preview an app on another device. Start a tunnel without an account or configuration file; sign in with GitHub when you need a custom subdomain.
 
 ```bash
 wormhole http 3000
 ```
 
-```
-  █   █ █▀▀█ █▀▀█ █▀▄▀█ █  █ █▀▀█ █   █▀▀
-  █▄█▄█ █  █ █▄▄▀ █ █ █ █▀▀█ █  █ █   █▀▀
-  ▀ ▀ ▀ ▀▀▀▀ ▀ ▀▀ ▀   ▀ ▀  ▀ ▀▀▀▀ ▀▀▀ ▀▀▀
-  v0.1.0
-
-  ╭──────────────────────────────────────────────────╮
-  │       Status  ● connected                        │
-  │   Forwarding  https://k7x9m2.wormhole.bar → ...  │
-  │    Inspector  http://localhost:4040               │
-  ╰──────────────────────────────────────────────────╯
-
-  Requests
-  --------------------------------------------------------------
-  GET     /                          200    12ms
-  POST    /webhooks/stripe           200     8ms
-  GET     /api/users                 200    34ms
-```
+<p align="center">
+  <img src="docs/terminal-preview.svg" alt="Illustrative tunnel session: a public HTTPS URL forwards to localhost:3000, with a local inspector and a live request log." width="100%">
+  <br>
+  <sub>Illustrative session · Your public URL is assigned when the tunnel connects.</sub>
+</p>
 
 ## Features
 
-- **One command** — `wormhole http 3000` and you're live
-- **HTTPS by default** — TLS handled automatically by Cloudflare
-- **Custom subdomains** — `wormhole http 3000 --subdomain myapp` (free with GitHub login)
-- **Traffic inspector** — Built-in dashboard at `localhost:4040` with live request stream
-- **Request replay** — Re-send any captured request with one click
-- **HAR export** — Export captured traffic in standard HAR format
-- **Color-coded terminal** — Live request log with method + status code colors
-- **Auto-reconnect** — Exponential backoff, seamless recovery
-- **WebSocket passthrough** — Full WebSocket support through the tunnel
-- **Zero config** — No signup, no config file, no server to deploy
-- **Open source** — Fully open source, MIT licensed
+| Capability | What you get |
+| :--- | :--- |
+| **Instant HTTPS tunnels** | A public URL for your local HTTP server, with TLS handled at the Cloudflare edge. |
+| **Custom subdomains** | Request a memorable address after signing in with GitHub. |
+| **Traffic inspector** | Inspect request and response details in a local dashboard with a live request stream. |
+| **Replay and export** | Replay captured requests and export traffic in HAR format. |
+| **WebSocket support** | Forward WebSocket connections through the tunnel. |
+| **Automatic recovery** | Reconnect with exponential backoff when the connection drops. |
+| **Terminal or headless mode** | Follow a color-coded request log or use plain log output. |
+| **Open source** | A Go client and Cloudflare Workers relay, licensed under MIT. |
 
-## Install
+## Installation
 
 ### Quick install (macOS / Linux)
 
@@ -68,13 +57,13 @@ curl -fsSL https://wormhole.bar/install.sh | sh
 brew install MuhammadHananAsghar/tap/wormhole
 ```
 
-### Go install
+### Release binaries
 
-```bash
-go install github.com/MuhammadHananAsghar/wormhole/cmd/wormhole@latest
-```
+Download a prebuilt binary from [GitHub Releases](https://github.com/MuhammadHananAsghar/wormhole/releases).
 
 ### Build from source
+
+Requires Go 1.26.1 or later and Make.
 
 ```bash
 git clone https://github.com/MuhammadHananAsghar/wormhole.git
@@ -83,7 +72,7 @@ make build
 # Binary: ./wormhole
 ```
 
-## Quick Start
+## Quick start
 
 ### Expose a local HTTP server
 
@@ -122,7 +111,7 @@ wormhole http 3000 --inspect localhost:5050
 wormhole http 3000 --no-inspect
 ```
 
-## CLI Reference
+## CLI reference
 
 ```bash
 wormhole http <port>                    # Expose local HTTP server
@@ -136,37 +125,26 @@ wormhole logout                         # Remove stored credentials
 wormhole status                         # Show auth status
 wormhole uninstall                      # Remove wormhole from system
 wormhole uninstall --purge              # Also remove config (~/.wormhole/)
+wormhole update                         # Update to the latest version
 wormhole version                        # Print version
 ```
 
-## How It Works
+## How it works
 
-```
-YOUR LAPTOP                       CLOUDFLARE EDGE (300+ cities)
-┌──────────────┐                 ┌─────────────────────────────┐
-│              │   WebSocket     │                             │
-│  wormhole    │◄───────────────►│  Worker (request router)    │
-│  client      │  (encrypted)    │         ↕                   │
-│              │                 │  Durable Object (tunnel)    │
-│  localhost   │                 │  • Holds your WebSocket     │
-│  :3000       │                 │  • Proxies HTTP to you      │
-└──────────────┘                 │  • Hibernates when idle     │
-                                 └──────────────┬──────────────┘
-                                                │
-                                   *.wormhole.bar (Cloudflare DNS)
-                                                │
-                                        Public Internet
+```mermaid
+flowchart LR
+    visitor[Public client] -->|HTTPS| edge[Cloudflare Worker]
+    edge --> tunnel[Durable Object]
+    tunnel <-->|Encrypted WebSocket| cli[Wormhole CLI]
+    cli <-->|HTTP / WebSocket| local["localhost:3000"]
 ```
 
-1. Client opens WebSocket to nearest Cloudflare edge
-2. Durable Object assigns a subdomain
-3. HTTP requests to `*.wormhole.bar` hit the Worker
-4. Worker routes to the correct Durable Object
-5. DO serializes the request over WebSocket to your client
-6. Client forwards to `localhost:3000`
-7. Response flows back the same path
+1. The CLI opens a WebSocket connection to the Cloudflare edge and receives a public subdomain.
+2. Requests to that subdomain reach a Worker, which routes them to the tunnel's Durable Object.
+3. The Durable Object forwards requests over the connection to the CLI.
+4. The CLI calls your local server and sends its response back through the tunnel.
 
-**Latency:** client <-> nearest CF edge (~5-20ms) + localhost (~0ms) = fast.
+The traffic inspector runs locally at `http://localhost:4040` and records requests for inspection, replay, and export.
 
 ## Architecture
 
@@ -180,7 +158,7 @@ YOUR LAPTOP                       CLOUDFLARE EDGE (300+ cities)
 | TLS | Cloudflare automatic SSL |
 | Auth | GitHub OAuth |
 
-## Project Structure
+## Project structure
 
 ```
 wormhole/
@@ -221,9 +199,9 @@ WORMHOLE_NO_PATH_FILTER=1 wormhole http 3000
 
 ### Inspector CORS hardening (CWE-942)
 
-The traffic inspector (`localhost:4040`) no longer sets `Access-Control-Allow-Origin: *`. CORS headers are only returned when the request's `Origin` is a loopback origin on the inspector's bound port. This prevents malicious websites visited in the same browser session from reading tunnel traffic via cross-origin requests.
+The traffic inspector (`localhost:4040`) does not set `Access-Control-Allow-Origin: *`. CORS headers are only returned when the request's `Origin` is a loopback origin on the inspector's bound port. This prevents malicious websites visited in the same browser session from reading tunnel traffic via cross-origin requests.
 
-The WebSocket upgrader's `CheckOrigin` is also locked down to the same policy.
+The WebSocket upgrader applies the same origin policy.
 
 ### Error message sanitization (CWE-200)
 
@@ -231,12 +209,14 @@ When the local server is unreachable, wormhole returns a generic message (`Tunne
 
 ## Development
 
+Use Go 1.26.1 or later for the client and Node.js with npm for the edge relay.
+
 ```bash
 # Run all Go tests
 go test ./... -race
 
 # Run edge tests
-cd edge && npm test
+(cd edge && npm ci && npm test)
 
 # Build binary
 make build
@@ -245,33 +225,31 @@ make build
 make dist
 ```
 
-### TDD Workflow
+### Test-driven development
 
 This project follows test-driven development. Write failing tests first, then implement.
 
 ```bash
-# Run tests in watch mode
+# Run inspector tests without cached results
 go test ./internal/inspect/ -v -count=1
 
 # Coverage
 go test ./... -cover
 ```
 
-## Comparison
+## Contributing
 
-| Feature | ngrok (free) | Cloudflare Tunnel | **Wormhole** |
-|---|---|---|---|
-| One-command setup | Needs signup | Needs CF account | **Just works** |
-| Custom subdomains | Paid ($8/mo) | Yes (complex) | **Free** |
-| HTTPS | Yes | Yes | **Yes** |
-| Traffic inspector | Basic | No | **Full (replay, HAR)** |
-| WebSocket support | Yes | Yes | **Yes** |
-| Open source | No | Client only | **Fully open source** |
-| Cost | $0-$120/yr | $0 (complex) | **$0** |
+Bug reports and focused pull requests are welcome. For a bug report, include your operating system, `wormhole version`, reproduction steps, and relevant logs with credentials removed.
+
+Before opening a pull request, run the tests for the components you changed. Update the documentation when changing commands or user-facing behavior.
 
 ## Roadmap
 
-Wormhole is built on a **dual-track architecture**: Cloudflare Workers (free, no setup) + self-hosted Go relay (full control, unlimited scale).
+The current CLI uses a Cloudflare Workers relay. Future work includes a self-hosted Go relay, additional transports, and team features. The items below distinguish shipped capabilities from planned work.
+
+<details>
+<summary>View the development roadmap</summary>
+
 
 - [x] **Phase 1** — Core tunnel (`wormhole http 3000` → public URL, WebSocket passthrough)
 - [x] **Phase 2** — HTTPS, custom subdomains (auto-reserve, 3/user limit), GitHub OAuth
@@ -285,6 +263,8 @@ Wormhole is built on a **dual-track architecture**: Cloudflare Workers (free, no
 - [ ] **Phase 10** — Enterprise hardening (connection limits, mTLS, audit logs, RBAC)
 - [ ] **Phase 11** — P2P mode (`wormhole share`, WebRTC direct connections, no relay)
 - [ ] **Phase 12** — Polish & ship (homepage, docs site, video demos, package registries)
+
+</details>
 
 ## Author
 

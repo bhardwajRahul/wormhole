@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="580" viewBox="0 0 1200 580" role="img" aria-labelledby="title desc">
+  <title id="title">Wormhole tunnel session</title>
+  <desc id="desc">Illustrative terminal session showing wormhole http 3000, a connected HTTPS tunnel to localhost:3000, the local inspector, and three successful requests.</desc>
+  <defs>
+    <linearGradient id="accent" x2="1" y2="0">
+      <stop stop-color="#22e69b"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1198" height="578" rx="20" fill="#0c1218" stroke="#26343d" stroke-width="2"/>
+  <path d="M21 1H1179Q1199 1 1199 21V61H1V21Q1 1 21 1" fill="#141d25"/>
+  <path d="M1 61H1199" stroke="#26343d"/>
+  <circle cx="31" cy="31" r="6" fill="#fb7185"/>
+  <circle cx="53" cy="31" r="6" fill="#fbbf24"/>
+  <circle cx="75" cy="31" r="6" fill="#34d399"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+    <text x="600" y="37" text-anchor="middle" font-size="16" fill="#a4b4c3">wormhole — tunnel preview</text>
+    <text x="40" y="178" font-size="38" font-weight="700" fill="url(#accent)">wormhole</text>
+    <rect x="988" y="148" width="172" height="38" rx="19" fill="#12362b" stroke="#235943"/>
+    <circle cx="1010" cy="167" r="5" fill="#41e7a1"/>
+    <text x="1026" y="173" font-size="17" font-weight="600" fill="#74edb6">Connected</text>
+  </g>
+  <g font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace" font-size="21">
+    <text x="40" y="116" fill="#32dfa0">$<tspan dx="16" fill="#e7eef5">wormhole http 3000</tspan></text>
+    <rect x="40" y="209" width="1120" height="132" rx="12" fill="#101d25" stroke="#263c46"/>
+    <text x="64" y="249" fill="#93a9ba">Public URL</text>
+    <text x="249" y="249" fill="#4be7b0">https://k7x9m2.wormhole.bar</text>
+    <text x="64" y="282" fill="#93a9ba">Forwarding</text>
+    <text x="249" y="282" fill="#e7eef5">http://localhost:3000</text>
+    <text x="64" y="315" fill="#93a9ba">Inspector</text>
+    <text x="249" y="315" fill="#66d9ef">http://localhost:4040</text>
+    <g font-size="15" fill="#93a9ba" letter-spacing="1.5">
+      <text x="40" y="385">METHOD</text>
+      <text x="185" y="385">PATH</text>
+      <text x="896" y="385">STATUS</text>
+      <text x="1160" y="385" text-anchor="end">TIME</text>
+    </g>
+    <path d="M40 400H1160" stroke="#293741"/>
+    <text x="40" y="439" fill="#66d9ef">GET</text>
+    <text x="185" y="439" fill="#e7eef5">/</text>
+    <text x="902" y="439" fill="#4be7b0">200</text>
+    <text x="1160" y="439" text-anchor="end" fill="#a4b4c3">12 ms</text>
+    <text x="40" y="483" fill="#d9b5ff">POST</text>
+    <text x="185" y="483" fill="#e7eef5">/webhooks/stripe</text>
+    <text x="902" y="483" fill="#4be7b0">200</text>
+    <text x="1160" y="483" text-anchor="end" fill="#a4b4c3">8 ms</text>
+    <text x="40" y="527" fill="#66d9ef">GET</text>
+    <text x="185" y="527" fill="#e7eef5">/api/users</text>
+    <text x="902" y="527" fill="#4be7b0">200</text>
+    <text x="1160" y="527" text-anchor="end" fill="#a4b4c3">34 ms</text>
+  </g>
+</svg>
