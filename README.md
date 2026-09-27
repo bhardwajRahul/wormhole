@@ -266,6 +266,16 @@ The current CLI uses a Cloudflare Workers relay. Future work includes a self-hos
 
 </details>
 
+## Contributors
+
+Thanks to everyone who helps improve Wormhole through code, documentation, bug reports, and ideas.
+
+<a href="https://github.com/MuhammadHananAsghar/wormhole/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=MuhammadHananAsghar/wormhole" alt="Wormhole contributors">
+</a>
+
+[View all contributors](https://github.com/MuhammadHananAsghar/wormhole/graphs/contributors) · [Contribute to Wormhole](#contributing)
+
 ## Author
 
 **Muhammad Hanan Asghar**
